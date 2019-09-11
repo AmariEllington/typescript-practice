@@ -18,13 +18,3 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
-
-.my-button {
-  border: 1px solid blue;
-  background-image: white;
-}
-
-img.pokemon-image {
-  margin-top: 20px;
-  margin-bottom: 10px;
-}

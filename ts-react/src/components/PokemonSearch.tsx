@@ -1,5 +1,16 @@
 import React, { Component } from "react";
+import styled from "styled-components";
 import User from "../interfaces/User.interface";
+
+const Button = styled.button`
+  border: 1px solid blue;
+  background-image: white;
+`;
+
+const PokemonImage = styled.img`
+  margin-top: 20px;
+  margin-bottom: 10px;
+`;
 
 interface SearchState {
   error: boolean;
@@ -56,7 +67,7 @@ export class PokemonSearch extends Component<User, SearchState> {
     } else if (this.state.pokemon) {
       resultMarkup = (
         <div>
-          <img src={pokemon.imageURL} alt="pokemon" className="pokemon-image" />
+          <PokemonImage src={pokemon.imageURL} alt="pokemon" />
           <p>
             {userName} has {pokemon.numberOfAbilities} abilities and{" "}
             {pokemon.baseExperience} base experience points
@@ -71,9 +82,7 @@ export class PokemonSearch extends Component<User, SearchState> {
           User {userName} has {numberOfPokemons} Pokemons
         </p>
         <input type="text" ref={this.pokemonRef} />
-        <button onClick={this.onSearchClick} className="my-button">
-          Search
-        </button>
+        <Button onClick={this.onSearchClick}>Search</Button>
         {resultMarkup}
       </div>
     );
